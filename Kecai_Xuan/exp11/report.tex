@@ -1,0 +1,551 @@
+\documentclass[12pt]{ctexart}
+\usepackage{geometry}       % 设置页面整体布局
+\geometry{top=2.5cm, bottom=2.5cm, left=2cm, right=2cm}
+\usepackage{fancyhdr}       % 设置页眉页脚布局
+\pagestyle{fancy}
+\rhead{\thepage}            % 设置右页眉为页数
+\chead{中国科学技术大学}
+\cfoot{}                    % 设置中间页脚为空
+\usepackage{amsmath}        % 数学公式宏包
+\numberwithin{equation}{section}
+\usepackage{esint}          % 交叉引用宏包
+\usepackage[colorlinks,     % 设置引用的颜色
+            linkcolor=black,
+            anchorcolor=black,
+            urlcolor=cyan,
+            citecolor=black,
+           ]{hyperref}
+\usepackage{makecell}       % 插入表格宏包
+\usepackage{longtable}      % 长表格宏包
+\usepackage{appendix}       % 生成附录宏包
+\usepackage{graphicx}       % 插入图片宏包
+\usepackage{epstopdf}       % 插入eps图片宏包
+\usepackage{cite}           % 文献引用宏包
+\renewcommand{\thefigure}   % 设置图片编号格式
+    {\thesection{}.\arabic{figure}}
+\renewcommand{\thefootnote}{} % 设置角标编号不出现在文中
+                            % 以\footnotetext{Footnotetext without footnote mark}使用
+\usepackage{unicode-math}
+\usepackage{listings}
+\usepackage{hyperref}
+
+
+
+\CTEXsetup[format={\Large\bfseries}]{section}
+
+
+\begin{document}
+
+\nocite{*}
+
+\begin{center}
+    \heiti \fontsize{24pt}{0}{磁化率法测定配位化合物的结构}
+
+    \vspace{12pt}
+
+    \kaishu \fontsize{13.75pt}{0}禤科材
+
+    \footnotetext{\textbf{实验日期：}2022年11月4日}
+    \footnotetext{\textbf{作者简介：}禤科材（2002-），男，学号PB20030874，中国科学技术大学本科在读，专业方向为化学物理}
+    \footnotetext{\textbf{联系方式：}电话 18108064415 ，邮箱 \href{mailto:ustcxkc@mail.ustc.edu.cn}{ustcxkc@mail.ustc.edu.cn}}
+
+    \vspace{5pt}
+
+    \songti \fontsize{12pt}{0}(中国科学技术大学化学与材料科学学院，安徽 合肥 230026)
+\end{center}
+
+\noindent\textbf{摘~~~\!要}~~~\!
+配位化合物是由中心原子和配位体组成的化合物，其常常具有一定的几何
+结构。处于八面体场中的中心原子会产生能级分裂，分裂能大小不同的中心
+原子的 $d$ 电子排布也不同。由于非成对电子的平行排列，含有未成对电子
+的物质可以响应外界磁场的变化，利用磁化率法可以测定配合物的结构。
+本实验使用古埃磁天平测定了亚铁氰化钾和硫酸亚铁的摩尔磁化率，并判断
+了两种化合物中心原子的 $d$ 电子排布情况与配位键类型。
+\newline
+\textbf{关键字}~~~\!
+古埃磁天平；摩尔磁化率；配位化合物
+
+\begin{center}
+    {\LARGE\rmfamily\textbf{Structure Determination of Coordination Compounds by Magnetic Susceptibility Method}}
+
+    \vspace{12pt}
+
+    {\slshape Xuan Kecai}
+
+    \vspace{5pt}
+
+    (School of Chemistry and Material Science, USTC, Hefei 230026, China)
+\end{center}
+
+\noindent\textbf{Abstract}~~~\!
+Coordination compounds are compounds composed of central
+atoms and ligands, which often have a certain geometric
+structure. The central atom in the octahedral field will
+produce energy level splitting, and the d-electron
+arrangement of the central atom with different splitting
+energy is also different. Due to the parallel arrangement of
+unpaired electrons, the substance containing unpaired
+electrons can respond to the change of external magnetic
+field. The structure of the complex can be determined by
+magnetic susceptibility method. In this experiment, the
+molar susceptibility of potassium ferrocyanide and ferrous
+sulfate were measured by a Gu é magnetic balance, and the
+d-electron arrangement and coordination bond types of the
+central atoms of the two compounds were judged.
+\newline
+\textbf{Keywords}~~~\!
+Gouy magnetic balance; molar susceptibility; coordination
+compound
+
+\section{序言}
+
+配位化合物是一类具有特征化学结构的化合物，由中心原子和围绕它的配体
+分子或离子，完全或部分由配位键结合形成。配位化合物的化学键理论，
+主要研究中心原子与配体之间结合力的本性，用以说明配合物的物理及化学
+性质，如磁性、稳定性、反应性、配位数与几何构型等。价键理论认为，
+配体提供的孤对电子进入了中心离子的空原子轨道，使得配体与中心离子
+共享这两个电子。$^{[1, 2]}$
+
+磁化率是表征磁介质属性的物理量，它等于磁化强度$M$与磁场强度$H$之比，
+采用古埃磁天平可以测定物质的磁化率为
+\begin{align}
+    \chi_M
+    = \frac{2(\Delta W_{\text{样品 + 空管}}
+            - \Delta W_{\text{空管}})ghM}
+        {WH^2},
+\end{align}
+从而得到它与未成对电子数$n$的关系为
+\begin{align}
+    n(n + 2) = \frac{3KT}{N_A \beta^2 \chi_M}.
+\end{align}
+其中$N_A = 6.023\times 10^{23}$ mol$^{-1}$，
+$K = 1.386\times 10^{-16}$ erg/K，
+$\beta = 9.274\times 10^{-21}$ erg/Gauss。磁场强度可用 CT5 型
+高斯计测出，或用已知磁化率的莫尔氏盐进行间接标定。
+
+莫尔氏盐的克磁化率$\chi_m$与热力学温度$T$的关系式为
+\begin{align}
+    \chi_m = \frac{9500}{T + 1}\times 10^{-6}.
+\end{align}
+
+\section{实验}
+\subsection{试剂与仪器}
+
+七水合硫酸亚铁（硫酸亚铁）（国药集团化学试剂有限公司，AR）、三水合
+六氰铁(II) 酸钾（亚铁氰化钾）（国药集团化学试剂有限公司，AR）、
+六水合硫酸铁(II) 铵（硫酸亚铁铵）（国药集团化学试剂有限公司，AR）、
+蒸馏水。
+
+MB-1A 型磁天平（南京南大万和科技有限公司）、JDT-2A 型数字式精密
+温度温差测量仪（南京南大万和科技有限公司）、玻璃样品管、研钵、
+药匙、小漏斗、玻璃棒、烧杯。
+
+\subsection{实验方法}
+
+取一支空样品管悬挂在古埃磁天平上，分别测定励磁电流按
+$I = 0.0, 1.0, 2.0, 3.0, 4.0$ A 递增时对应的重量，再测定励磁电流
+递减时对应的重量，测定两次取平均值。将研细的样品分别通过小漏斗装入
+样品管，使粉末样品均匀填实，高度达到15 cm 及以上，用直尺准确测量样
+品高度 h，按照测量空样品管相同的方法测量对应励磁电流下的重量，测量
+两次，取两次数据的平均值。最后在管中装入上述三种物质的饱和溶液，
+重复上述操作。
+
+\section{结果与讨论}
+\subsection{实验结果}
+
+在实验室条件下，利用莫尔盐标定所用磁场强度，由 (1.3) 式可以计算出
+不同励磁电流对应的磁场强度如表 1 所示。
+
+\begin{longtable}{c|ccccc}
+    \caption{不同励磁电流对应的磁场强度} \\
+    \hline
+    励磁电流/A & 0.0 & 1.0 & 2.0 & 3.0 & 4.0 \\
+    \hline
+    磁场强度$H/$G & / &
+        473.755 & 802.126 & 1045.13 & 1467.88 \\
+    \hline
+    $H^2$/($\times 10^{6}$ G) & / &
+        0.2244 & 0.6434 & 1.092 & 2.155 \\
+    \hline
+\end{longtable}
+
+利用表 1 的数据计算亚铁氰化钾和硫酸亚铁的$\chi_M$和未成对电子数
+如表 2 所示。
+
+\begin{longtable}{c|c|c|c}
+    \caption{亚铁氰化钾和硫酸亚铁的$\chi_\text{M}$和未成对电子数} \\
+    \hline
+     & $\chi_\text{M}$/(cm$^3\cdot$mol$^{-1}$) &
+        未成对电子数实验值 & 理论未成对电子数 \\
+    \hline
+    硫酸亚铁 & 0.01001 & 3.952 & 4 \\
+    \hline
+    亚铁氰化钾 & $-2.884\times 10^{-5}$ & 0.572 & 0 \\
+    \hline
+\end{longtable}
+
+由实验结果可以看出，在误差允许的范围内，实验值与理论值相符。
+
+\subsection{误差分析}
+\subsubsection{系统误差}
+
+（1）在推导式$n(n+2) = 3KTX_\text{M}/(N_A\beta^2)$的过程中进行了几处
+近似处理。(i)忽略轨道磁矩对分子磁矩的贡献，认为分子的顺磁性全部
+由电子自旋提供，即$\mu_\text{m} \approx \mu_\text{ps} = \beta
+\sqrt{n(n+2)}$；(ii)忽略反磁磁化率对摩尔磁化率的贡献，即
+$\chi_\text{M} \approx \chi_\text{PM} = N_A
+\overline{\mu}_\text{p}/H$；(iii)居里定律$X_\text{PM} = C/T$
+是从$\overline{\mu}_\text{P}$的配分函数计算表达式取二阶近似得到的。
+这些近似都会带来一定的系统误差。
+
+（2）在实验原理中，作用于样品的力为$f = \displaystyle{\left|
+\int_H^0 XAH\frac{\partial H}{\partial z}\mathrm{d}z\right|
+= \frac{1}{2}XH^2A}$，此式的推导需要假设样品管足够长，使其上端
+顶部的磁场强度为 0。但事实上由于样品管长度有限，空白部分的磁场
+并不为 0，这会为实验结果带来一定的误差。
+
+（3）推导公式$\chi_\text{M} = 2(\Delta W_{\text{样品 + 空管}}
+- \Delta W_{\text{空管}})ghM/WH^2$时，我们将密度$\rho$转化为了
+填充样品的高度$h$。但填充样品时无法做到完全的均匀致密，尤其是样品管
+顶端的部分填充较为松散。这导致填充样品的密度小于理论密度，即测量的
+实际高度大于填充的有效高度，从而导致$\chi_\text{M}$的绝对值偏大。
+这会给实验结果带来一定的误差。
+
+\subsubsection{偶然误差}
+
+（1）仪器通过旋钮调节励磁电流，这样的调节方式存在一定的误差。实验
+过程中可以观察到，在调节电流到1.0 A 时，无论以怎样的方式和怎样的
+速度调节旋钮，电流示数总是难以稳定在1.0 A，读数在0.9 A 和1.1 A
+两个值上波动。可见实验仪器存在一定的问题，这会给实验结果带来一定的
+误差。
+
+（2）磁天平本身具有一定的误差。显示电流的仪表盘仅可读数到小数点后
+一位，但分析天平的精度可达小数点后四位。这导致在调节电流时，微小的
+调节并不会造成励磁电流示数的变化，但分析天平示数会出现波动，从而
+引入一定的误差。
+
+（3）本实验要求样品管竖直放置在两磁体中间，不能与左右磁体接触。但
+由于仪器本身的老化和铁丝的弯曲导致样品管难以处于完全竖直的状态，
+这对实验结果有一定的影响。
+
+（4）实验时所用实验台与温度计距离较远，所测得温度并不能准确代表实验
+环境的温度。同时，实验过程中由于室内空调的作用，温度计示数一直在缓缓
+上升，处理时只能取平均值，这也造成了一定的误差。
+
+\subsection{实验体会与认识}
+\subsubsection{实验结果讨论}
+
+由理论学习我们知道，亚铁氰化钾最外层 6 个价电子全部填充在
+$\mathrm{t_2 g}$轨道上，为强场低自旋，其轨道杂化类型为
+$\mathrm{d^2 sp^3}$杂化，为内轨型杂化，未成对价电子数为零。
+硫酸亚铁其中 5 个价电子先自旋平行的填充 5 个 d 轨道上，剩余 1 个
+电子填充在$\mathrm{t_2 g}$轨道上，与同轨道电子自旋反平行，
+为弱场低自旋，其轨道杂化类型为$\mathrm{d^2 sp^3}$杂化，
+为外轨型杂化，未成对价电子数为4。$^{[2]}$这与本实验的结果相一致。
+
+由实验结果计算出的未成对电子数$n$的值并不精确与理论符合，可能的误差
+已在上一节中讨论过。
+
+\subsubsection{实验方法改进}
+
+汤小菊等人$^{[3]}$使用 Evans 磁天平巧妙地采用光电系统“补偿”样品
+在磁场中的诱导力，把诱导力转化为电信号并可以放大，提高了数据的
+准确度和精密度，具有高灵敏性、多功能性和体积小巧等优点，可用于
+测量非铁磁性气体、液体和固体的磁化率。
+
+\section{结语}
+
+使用古埃磁天平可以测量配位化合物的摩尔磁化率，进而推算出化合物的
+未成对电子数。在本实验中，硫酸亚铁和的亚铁氰化钾摩尔磁化率
+$\chi_\text{M}$分别为0.01001 cm$3\cdot$mol$^{-1}$和
+$-2.884\times 10^{-5}$ cm$^3\cdot$mol$^{-1}$，计算出的未成对
+电子数分别为$3.952$和$-0.572$，与理论值$4$和$0$符合较好。
+
+\begin{center}
+    \Large\bfseries{参考文献}
+\end{center}
+\noindent
+[1] 傅献彩, 沈文霞, 姚天扬等. 物理化学（第五版）. 上册[M].
+高等教育出版社，2006.
+
+\noindent
+[2] 张祖德. 无机化学. 修订版[M]. 中国科学技术大学出版社, 2010.
+
+\noindent
+[3] 汤小菊, 颜瑷珲, 黄立民. 一种新型磁天平在配合物磁化率测定中的
+应用 [J]. 大学化学, 2020, 35(02): 58-63.
+
+\newpage
+
+\begin{center}
+    \LARGE\bfseries{附录~~~实验数据处理}
+\end{center}
+\begin{center}
+    \Large\bfseries{附录I~~~实验数据处理}
+\end{center}
+
+\begin{longtable}{ccccc}
+    \caption{摩尔盐数据处理} \\
+    \hline
+    励磁电流/A & $W_\text{空管}$/g &
+    $W_\text{固体样品+空管}$/g & $\Delta W_\text{空管}$/g &
+    $\Delta W_\text{固体样品+空管}$/g \\
+    \hline
+    0.0 & 15.6961 & 21.9159 &   /    &   /    \\
+    1.0 & 15.6959 & 21.9176 & 0.0002 & 0.0017 \\
+    2.0 & 15.6958 & 21.9220 & 0.0001 & 0.0044 \\
+    3.0 & 15.6956 & 21.9295 & 0.0002 & 0.0075 \\
+    4.0 & 15.6954 & 21.9400 & 0.0002 & 0.0105 \\
+    \hline
+\end{longtable}
+
+\begin{longtable}{ccccc}
+    \caption{七水合硫酸亚铁数据处理} \\
+    \hline
+    励磁电流/A & $W_\text{空管}$/g &
+    $W_\text{固体样品+空管}$/g & $\Delta W_\text{空管}$/g &
+    $\Delta W_\text{固体样品+空管}$/g \\
+    \hline
+    0.0 & 14.6912 & 21.9936 &   /    &   /    \\
+    1.0 & 14.6912 & 21.9959 & 0.0000 & 0.0023 \\
+    2.0 & 14.6911 & 22.0019 & 0.0001 & 0.0060 \\
+    3.0 & 14.6909 & 22.0119 & 0.0002 & 0.0100 \\
+    4.0 & 14.6907 & 22.0265 & 0.0002 & 0.0146 \\
+    \hline
+\end{longtable}
+
+\begin{longtable}{ccccc}
+    \caption{六水合亚铁氰化钾数据处理} \\
+    \hline
+    励磁电流/A & $W_\text{空管}$/g &
+    $W_\text{固体样品+空管}$/g & $\Delta W_\text{空管}$/g &
+    $\Delta W_\text{固体样品+空管}$/g \\
+    \hline
+    0.0 & 14.1201 & 20.4903 &   /    &   /    \\
+    1.0 & 14.1200 & 20.4903 & 0.0001 & 0.0000 \\
+    2.0 & 14.1200 & 20.4901 & 0.0000 & 0.0002 \\
+    3.0 & 14.1197 & 20.4898 & 0.0003 & 0.0003 \\
+    4.0 & 14.1195 & 20.4895 & 0.0002 & 0.0003 \\
+    \hline
+\end{longtable}
+
+使用以下计算式进行处理
+
+\begin{align}
+    \chi_\text{M}
+    &= \frac{2(\Delta W_\text{样品+空管}
+            -\Delta W_\text{空管})ghM}{WH^2},
+    \tag{I.1} \\
+    \chi_\text{m}M
+    &= \frac{2(\Delta W_\text{样品+空管}
+            -\Delta W_\text{空管})ghM}{WH^2},
+    \tag{I.2} \\
+    H &= \sqrt{\frac{2(\Delta W_\text{样品+空管}
+            -\Delta W_\text{空管})gh}{W\chi_\text{M}}},
+    \tag{I.3} \\
+    \chi_\text{m} &= \frac{9500}{T + 1} \times 10^{-6}.
+    \tag{I.4}
+\end{align}
+
+温度取平均值
+\begin{align}
+    T = \frac{292.65 + 293.45 + 293.85}{3}
+        = 293.32~\mathrm{(K)}. \tag{I.5}
+\end{align}
+
+用莫尔盐进行标定，可以算出
+\begin{align}
+    \chi_\text{m} = \frac{9500}{T + 1} \times 10^{-6}
+        = 3.2278 \times 10^{-5}~\mathrm{(cm^3\cdot g^{-1})}.
+    \tag{I.6}
+\end{align}
+
+再根据式(I.3)可知$H$的计算式为
+\begin{align}
+    H = \sqrt{\frac{2(\Delta W_\text{样品+空管}
+            -\Delta W_\text{空管})\times 981\times 15.27}
+        {(21.9159-15.6961)\times 3.2278 \times 10^{-5}}}.
+    \tag{I.7}
+\end{align}
+
+带入摩尔盐的实验数据可以算出不同励磁电流对应的磁场强度如下表所示。
+
+\begin{longtable}{c|ccccc}
+    \caption{不同励磁电流对应的磁场强度} \\
+    \hline
+    励磁电流/A & 0.0 & 1.0 & 2.0 & 3.0 & 4.0 \\
+    \hline
+    磁场强度$H/$G & / &
+        473.755 & 802.126 & 1045.13 & 1467.88 \\
+    \hline
+    $H^2$/($\times 10^{6}$ G) & / &
+        0.2244 & 0.6434 & 1.092 & 2.155 \\
+    \hline
+\end{longtable}
+
+计算硫酸亚铁组，$M = 278.01$g/mol，$h = 15.28$cm。由式(I.1)可得
+$\chi_\text{M}$的计算式为
+\begin{align}
+    \chi_\text{M} &= \frac{2(\Delta W_\text{样品+空管}
+        -\Delta W_\text{空管})ghM}{WH^2} \notag \\
+    &= \frac{2(\Delta W_\text{样品+空管}-\Delta W_\text{空管})
+        \times 981\times 15.28\times 278.01}
+        {(21.9936-14.6912)H^2}. \tag{I.8}
+\end{align}
+
+带入硫酸亚铁的实验数据可以算出不同励磁电流对应硫酸亚铁的摩尔
+磁化率如下表所示。
+\vspace{1cm}
+\begin{longtable}{c|ccccc}
+    \caption{不同励磁电流对应硫酸亚铁的$\chi_\text{M}$} \\
+    \hline
+    励磁电流/A & 0.0 & 1.0 & 2.0 & 3.0 & 4.0 \\
+    \hline
+    $\chi_\text{M}$/(cm$^3\cdot$mol$^{-1}$) & / &
+        0.01170 & 0.01047 & 0.01024 & 0.007627 \\
+    \hline
+    $\overline{\chi_\text{M}}$/(cm$^3\cdot$mol$^{-1}$) &
+        \multicolumn{5}{c}{0.01001} \\
+    \hline
+\end{longtable}
+
+再由下式求出未成对电子数
+\begin{align}
+    n(n+2) = \frac{3KT}{N_A \beta^2 \chi_\text{M}}.
+    \tag{I.9}
+\end{align}
+其中$K = 1.386\times 10^{-16}$erg/K，
+$N_A = 6.023\times 10^{23}$mol$^{-1}$，
+$\beta = 9.274\times 10^{-21}$erg/Gauss，$T = 293.32$K。
+
+代入数据可解得$n = 3.952$。未成对电子数取整数，故七水合硫酸亚铁
+配合物分子中未成对电子数为4。
+
+计算亚铁氰化钾组，$M = 422.39$g/mol，$h = 15.24$。
+$\chi_\text{M}$的计算式为
+\begin{align}
+    \chi_\text{M}
+    = \frac{2(\Delta W_\text{样品+空管}-\Delta W_\text{空管})
+                \times 981\times 15.24\times 278.01}
+            {(20.4903-14.1201)H^2}. \tag{I.10}
+\end{align}
+
+带入亚铁氰化钾的实验数据可以算出不同励磁电流对应亚铁氰化钾的摩尔
+磁化率如下表所示。
+\vspace{1cm}
+\begin{longtable}{c|ccccc}
+    \caption{不同励磁电流对应亚铁氰化钾的$\chi_\text{M}$} \\
+    \hline
+    励磁电流/A & 0.0 & 1.0 & 2.0 & 3.0 & 4.0 \\
+    \hline
+    $\chi_\text{M}$/($\times 10^{-4}$cm$^3\cdot$mol$^{-1}$) &
+        / & $-5.815$ & 4.056 & 0.000 & 0.6055 \\
+    \hline
+    $\overline{\chi_\text{M}}$/(cm$^3\cdot$mol$^{-1}$) &
+        \multicolumn{5}{c}{$-2.884\times 10^{-5}$} \\
+    \hline
+\end{longtable}
+
+由式(I.9)可求出未成对电子数为$n = -0.572$。未成对电子数取正整数，
+故六水合亚铁氰化钾配合物分子中未成对电子数为0。
+
+\newpage
+\begin{center}
+    \Large\bfseries{附录II~~~原始数据记录}
+\end{center}
+
+实验前温度：19.5$^\circ$C；实验中温度：20.3$^\circ$C；
+实验后温度：20.7$^\circ$C。
+
+\begin{longtable}{cccccc}
+    \caption{一号空样品管} \\
+    \hline
+    励磁电流/A & $W_1~(\uparrow)$/g & $W_1~(\downarrow)$/g &
+    $W_2~(\uparrow)$/g & $W_2~(\downarrow)$/g &
+    $\overline{W}$/g \\
+    \hline
+    0.0 & 15.6974 & 15.6959 & 15.6960 & 15.6950 & 15.6961 \\
+    1.0 & 15.6969 & 15.6960 & 15.6957 & 15.6949 & 15.6959 \\
+    2.0 & 15.6966 & 15.6960 & 15.6955 & 15.6949 & 15.6958 \\
+    3.0 & 15.6964 & 15.6962 & 15.6951 & 15.6948 & 15.6956 \\
+    4.0 & 15.6962 & 15.6958 & 15.6948 & 15.6947 & 15.6954 \\
+    \hline
+\end{longtable}
+
+\begin{longtable}{cccccc}
+    \caption{摩尔盐（样品高度15.27 cm）} \\
+    \hline
+    励磁电流/A & $W_1~(\uparrow)$/g & $W_1~(\downarrow)$/g &
+    $W_2~(\uparrow)$/g & $W_2~(\downarrow)$/g &
+    $\overline{W}$/g \\
+    \hline
+    0.0 & 21.9158 & 21.9159 & 21.9160 & 21.9159 & 21.9159 \\
+    1.0 & 21.9175 & 21.9175 & 21.9176 & 21.9178 & 21.9176 \\
+    2.0 & 21.9217 & 21.9222 & 21.9217 & 21.9223 & 21.9220 \\
+    3.0 & 21.9293 & 21.9295 & 21.9291 & 21.9299 & 21.9295 \\
+    4.0 & 21.9396 & 21.9400 & 21.9399 & 21.9405 & 21.9400 \\
+    \hline
+\end{longtable}
+
+\begin{longtable}{cccccc}
+    \caption{二号空样品管} \\
+    \hline
+    励磁电流/A & $W_1~(\uparrow)$/g & $W_1~(\downarrow)$/g &
+    $W_2~(\uparrow)$/g & $W_2~(\downarrow)$/g &
+    $\overline{W}$/g \\
+    \hline
+    0.0 & 14.6910 & 14.6912 & 14.6913 & 14.6914 & 14.6912 \\
+    1.0 & 14.6911 & 14.6912 & 14.6913 & 14.6913 & 14.6912 \\
+    2.0 & 14.6911 & 14.6910 & 14.6910 & 14.6911 & 14.6911 \\
+    3.0 & 14.6908 & 14.6909 & 14.6910 & 14.6910 & 14.6909 \\
+    4.0 & 14.6906 & 14.6907 & 14.6908 & 14.6906 & 14.6907 \\
+    \hline
+\end{longtable}
+
+\vspace{3cm}
+\begin{longtable}{cccccc}
+    \caption{七水合硫酸亚铁（样品高度15.28 cm）} \\
+    \hline
+    励磁电流/A & $W_1~(\uparrow)$/g & $W_1~(\downarrow)$/g &
+    $W_2~(\uparrow)$/g & $W_2~(\downarrow)$/g &
+    $\overline{W}$/g \\
+    \hline
+    0.0 & 21.9939 & 21.9936 & 21.9936 & 21.9934 & 21.9936 \\
+    1.0 & 21.9963 & 21.9956 & 21.9953 & 21.9962 & 21.9959 \\
+    2.0 & 22.0017 & 22.0020 & 22.0015 & 22.0023 & 22.0019 \\
+    3.0 & 22.0117 & 22.0122 & 22.0116 & 22.0121 & 22.0119 \\
+    4.0 & 22.0265 & 22.0264 & 22.0259 & 22.0272 & 22.0265 \\
+    \hline
+\end{longtable}
+
+\begin{longtable}{cccccc}
+    \caption{三号空样品管} \\
+    \hline
+    励磁电流/A & $W_1~(\uparrow)$/g & $W_1~(\downarrow)$/g &
+    $W_2~(\uparrow)$/g & $W_2~(\downarrow)$/g &
+    $\overline{W}$/g \\
+    \hline
+    0.0 & 14.1199 & 14.1200 & 14.1202 & 14.1203 & 14.1201 \\
+    1.0 & 14.1199 & 14.1199 & 14.1200 & 14.1202 & 14.1200 \\
+    2.0 & 14.1198 & 14.1199 & 14.1201 & 14.1201 & 14.1200 \\
+    3.0 & 14.1196 & 14.1196 & 14.1198 & 14.1199 & 14.1197 \\
+    4.0 & 14.1194 & 14.1193 & 14.1198 & 14.1196 & 14.1195 \\
+    \hline
+\end{longtable}
+
+\begin{longtable}{cccccc}
+    \caption{六水合亚铁氰化钾（样品高度15.24 cm）} \\
+    \hline
+    励磁电流/A & $W_1~(\uparrow)$/g & $W_1~(\downarrow)$/g &
+    $W_2~(\uparrow)$/g & $W_2~(\downarrow)$/g &
+    $\overline{W}$/g \\
+    \hline
+    0.0 & 20.4902 & 20.4903 & 20.4903 & 20.4904 & 20.4903 \\
+    1.0 & 20.4902 & 20.4903 & 20.4902 & 20.4904 & 20.4903 \\
+    2.0 & 20.4899 & 20.4901 & 20.4902 & 20.4902 & 20.4901 \\
+    3.0 & 20.4897 & 20.4897 & 20.4900 & 20.4899 & 20.4898 \\
+    4.0 & 20.4894 & 20.4893 & 20.4897 & 20.4895 & 20.4895 \\
+    \hline
+\end{longtable}
+
+\end{document}
